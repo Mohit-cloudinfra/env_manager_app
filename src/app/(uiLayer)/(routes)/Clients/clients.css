@@ -1,0 +1,258 @@
+@import "../../commoncomponents/variable.css";
+
+.main-cont {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--main-cont-bg);
+    padding: 20px;
+    height: calc(100vh - 60px);
+    gap: 20px;
+}
+
+.main-cont-header {
+    height: 63px;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 14px 24px 14px 14px;
+    border-radius: 8px;
+    align-items: center;
+}
+
+.header-title {
+    font-size: var(--size13);
+    color: var(--main-cont-header-title);
+    font-weight: 500;
+    margin-left: 10px;
+}
+
+.header-actions {
+    gap: 10px;
+    width: auto;
+}
+
+.btn-refresh {
+    cursor: pointer;
+    color: var(--refresh-color);
+    animation: none;
+}
+
+.refreshing {
+    animation: spin 3s linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+        color: var(--buttonColor);
+    }
+    100% {
+        transform: rotate(1080deg);
+        color: var(--buttonColor);
+    }
+}
+
+.add-button {
+    padding-left: 25px;
+    padding-right: 25px;
+    color: var(--white);
+    white-space: nowrap;
+    background-color: var(--buttonColor);
+    border: none;
+}
+
+.add-button:hover {
+    background-color: var(--button-hover);
+    color: var(--white);
+}
+
+.main-cont-main {
+    flex: 1;
+    padding: 20px;
+    background-color: var(--white);
+    overflow: auto;
+    border-radius: 8px;
+}
+
+.table-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow: auto;
+}
+
+.action-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+    color: var(--buttonColor);
+}
+.action-icon{
+    cursor: pointer;
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 34px;
+    height: 20px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 5s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #4CAF50;
+}
+
+input:checked + .slider:before {
+    transform: translateX(14px);
+}
+
+table {
+    width: 55% !important;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px 0px;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.table thead tr {
+    height: 42px !important;
+}
+
+.table tbody tr {
+    height: 42.375px !important;
+}
+
+.table th, .table td {
+    text-align: center;
+    vertical-align: middle;
+    font-size: var(--size31);
+    border-bottom: 1px solid #dee2e6;
+}
+
+.table td {
+    align-items: center;
+}
+
+.table thead th {
+    background-color: var(--table-head-color);
+    font-weight: 500;
+}
+
+.table tbody tr {
+    background-color: #fff;
+}
+
+.table {
+    width: 100%;
+}
+
+.table thead tr:first-child th {
+    border-top: 1px solid #dee2e6;
+}
+
+/* Updated Popup Styles to Match Indicia */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--modal-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-card {
+    background-color: var(--white);
+    border-radius: 8px;
+    width: 420px;
+    position: relative;
+}
+
+.popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--buttonColor);
+    color: var(--white);
+    padding: 10px 15px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.popup-header h3 {
+    margin: 0;
+    letter-spacing: .05em;
+    font-size: var(--size31);
+    font-weight: 400;
+}
+
+.close-icon {
+    cursor: pointer;
+    color: var(--white);
+    background-color: var(--buttonColor);
+}
+
+.popup-body {
+    padding: 18px;
+    gap: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.popup-label {
+    width: 130px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.submit-btn {
+    background-color: var(--buttonColor);
+    color: var(--white);
+    border: none;
+    padding: 8px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: #007a99;
+}

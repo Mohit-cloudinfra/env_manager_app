@@ -1,0 +1,49 @@
+@import "../commoncomponents/variable.css";
+
+  /* styles.css */
+.layout {
+    display: flex;        
+    min-height: 100vh; 
+    flex-direction: row;
+  }
+  .sidebar {
+    height: 100vh;
+    background-color: var(--buttonColor);
+    transition: width 0.3s;
+  }
+  
+  .main-area {
+    flex: 1;                /* Takes up remaining space beside the sidebar */
+    display: flex;          /* Stack header and main-content vertically */
+    flex-direction: column;
+
+  }
+  
+  .header {
+    display: flex;
+    padding: 10px;
+    padding-right: 20px;
+    justify-content: end;
+    height: 60px;           /* Fixed height for header, adjust as needed */
+    background-color: #ffffff; /* Example background color */
+    border-bottom: 1px solid #ddd; /* Optional styling */
+
+  }
+  .logouticon{
+font-size: var(--size12);
+margin-right: 2px;
+  }
+  button{
+    border: none;
+    background-color: var(--white);
+    color: var(--black);
+    gap: 10px;
+    font-size: var(--size3);
+  }
+  
+  .main-content {
+    flex: 1;                /* Takes up remaining space below header */
+    overflow: auto;
+    background-color: #ff9494; /* Example background color */
+    /* Add other styles like padding, overflow, etc. */
+  }

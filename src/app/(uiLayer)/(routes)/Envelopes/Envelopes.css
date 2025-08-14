@@ -1,0 +1,263 @@
+@import "../../commoncomponents/variable.css";
+
+.main-cont {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--main-cont-bg);
+    padding: 20px;
+    height: calc(100vh - 60px);
+    gap: 20px;
+}
+
+.main-cont-header {
+    height: 63px;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 14px 24px 14px 14px;
+    border-radius: 8px;
+    align-items: center;
+}
+
+.header-title {
+    font-size: var(--size13);
+    color: var(--main-cont-header-title);
+    font-weight: 500;
+    margin-left: 10px;
+}
+
+/* Styles for Tab Buttons and Animation */
+.tab-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tab-button {
+    background: transparent;
+    color: var(--black);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    position: relative;
+    z-index: 100;
+    cursor: pointer;
+}
+
+.tab-button.active {
+    color: white;
+}
+
+.active-indicator {
+    position: absolute;
+    top: 30;
+    height: 80%;
+    background: var(--buttonColor);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    z-index: 0;
+}
+
+.header-actions {
+    gap: 10px;
+    width: auto;
+}
+
+.search-container {
+    width: 210px;
+}
+
+.search-input {
+    border-radius: 0.25rem;
+}
+
+.search-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6c757d;
+    pointer-events: none;
+}
+
+.btn-refresh {
+    cursor: pointer;
+    color: var(--refresh-color);
+    animation: none;
+}
+
+.refreshing {
+    animation: spin 3s linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); color: var(--buttonColor); }
+    100% { transform: rotate(1800deg); color: var(--buttonColor); }
+}
+
+.add-button {
+    padding-left: 25px;
+    padding-right: 25px;
+    color: var(--white);
+
+    background-color: var(--buttonColor);
+}
+
+.add-button:hover {
+    background-color: var(--button-hover);
+    color: var(--white);
+}
+
+.main-cont-main {
+    flex: 1;
+    padding: 20px;
+    background-color: var(--white);
+    overflow: auto;
+    border-radius: 8px;
+}
+
+.table-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow: auto;
+}
+
+.table {
+    width: 90% !important;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px 0px;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.table thead tr {
+    height: 42px !important;
+}
+
+.table tbody tr {
+    height: 42.375px !important;
+}
+
+.table th, .table td {
+    text-align: center;
+    vertical-align: middle;
+    font-size: var(--size31);
+    border-bottom: 1px solid #dee2e6;
+}
+
+.table thead th {
+    background-color: #F8F9FA;
+    color: black;
+    font-weight: bold;
+}
+
+.table tbody tr {
+    background-color: #fff;
+}
+
+.action-icon {
+    color: var(--buttonColor);
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Higher than all other elements */
+}
+
+.popup-content {
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    width: 570px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.popup-header {
+    height: 50px;
+    background-color: var(--buttonColor);
+    color: var(--white);
+    padding: 10px 15px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.popup-header h3 {
+    margin: 0;
+    letter-spacing: 0.05em;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.close-icon {
+    cursor: pointer;
+    font-size: 20px;
+    color: var(--white);
+}
+
+.popup-body {
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.labe-cont{
+    width: 30%;
+}
+.in-cont{
+    width: 70%;
+}
+.form-control {
+    padding: 8px;
+    border: 1px solid #CCCCCC;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #000000;
+    width: 100%;
+}
+
+.radio-group {
+    display: flex;
+    gap: 5px;
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+input[type="radio"] {
+    accent-color: #007BFF; /* Teal fill when selected */
+}
+
+.submit-btn {
+    width: 80px;
+    background-color: var(--buttonColor);
+    color: var(--white);
+    border: none;
+    padding: 8px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3; /* Darken on hover */
+}

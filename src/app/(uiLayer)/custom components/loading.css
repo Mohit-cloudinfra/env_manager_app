@@ -1,0 +1,65 @@
+
+.loading-screen {
+    position: fixed;
+    top:45vh;
+    left: 44vw;
+    width: 330px;
+    height: 80px;
+    background: rgba(255, 255, 255);
+    display: flex;
+    flex-direction: row;
+    padding: 40px;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 5px;
+  }
+  
+  .spinner {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    animation: rotate 1s linear infinite;
+  }
+  
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 45%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+  
+  .dot1 {
+    background-color: #09c; /* Blue */
+    transform: translate(-50%, -50%) translateY(-15px);
+  }
+  
+  .dot2 {
+    background-color: #46bfe7; /* Royal Blue */
+    transform: translate(-50%, -50%) translateX(15px);
+  }
+  
+  .dot3 {
+    background-color: #85d6f1; /* Dodger Blue */
+    transform: translate(-50%, -50%) translateY(15px);
+  }
+  
+  .dot4 {
+    background-color: #c8f0ff; /* Sky Blue */
+    transform: translate(-50%, -50%) translateX(-15px);
+  }
+  
+  @keyframes rotate {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .loading-screen p {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #333;
+  }

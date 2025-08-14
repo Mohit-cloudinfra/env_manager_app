@@ -1,0 +1,126 @@
+@import "../commoncomponents/variable.css";
+
+/* Layout wrapper if needed */
+.layout {
+  display: flex;
+  flex-direction: row;
+}
+
+/* Sidebar container */
+.sidebar {
+  background-color: var(--buttonColor);
+  transition: width 0.3s;
+  height: 100vh; /* keep it full height */
+  overflow: hidden; /* prevent overflow when collapsed */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Collapsed vs expanded widths */
+.sidebar.open {
+  width: 250px;
+}
+
+.sidebar.closed {
+  width: 70px;
+}
+
+/* Header area */
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  color: var(--white);
+  padding: 0 10px;
+  background-color: var(--buttonColor);
+}
+.sidebar.closed.sidebar-header{
+  display: flex;
+  justify-content: center;
+}
+
+.sidebar-header h2 {
+  font-size: var(--size4);
+  letter-spacing: .09rem;
+  color: var(--white);
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Hamburger button */
+.hambtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--size1);
+  background-color: transparent;
+  color: var(--white);
+  border: none;
+  cursor: pointer;
+}
+.sidebar.closed .sidebar-header .hambtn {
+  margin: 0 auto; /* Centers button */
+}
+
+
+/* The UL for nav items */
+.sidebar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Each LI */
+.sidebar li {
+  display: flex;
+  align-items: center;
+  gap: 100px;
+  height: 42px;
+  padding-left: 20px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+/* On hover, highlight the row */
+.sidebar li:hover {
+  background-color: var(--button-hover);
+}
+
+/* Active route styling */
+.sidebar li.active {
+  background-color: var(--nav-display);
+  font-weight: bold;
+}
+
+/* The link itself */
+.sidebar li a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--white);
+  width: 100%;
+  height: 100%;
+  padding-right: 10px; /* space for icon + text */
+}
+
+/* Icon and text inside the link */
+.icon {
+  font-size: var(--size11);
+  margin-left: 7px;
+
+  color: var(--white);
+}
+
+.text {
+  margin-left: 28px;
+  font-size: var(--size4);
+  font-weight: 400;
+  color: var(--white);
+  display: inline;
+}
+
+/* Hide text when sidebar is closed */
+.sidebar.closed .text {
+  display: none;
+}

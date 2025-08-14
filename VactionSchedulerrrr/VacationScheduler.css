@@ -1,0 +1,434 @@
+
+/* Common styles for both desktop and mobile */
+.main-container-vacation-scheduler {
+  background-color: var(--white);
+  width: 100%;
+  min-height: 100vh;
+  max-height: 100vh;
+  padding: 16px;
+  box-sizing: border-box;
+  /*overflow: auto;
+  overflow-x: auto;
+  overflow-y: auto;*/
+}
+
+.add-vacation-scheduler,
+.vacation-history {
+  background-color: var(--white);
+  border: 2px solid var(--vs-sub-cont-border-color);
+  width: 100%;
+  box-sizing: border-box;
+}
+.vacation-history {
+  flex-grow: 1; /* Takes up remaining space */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.add-vacation-scheduler-header, .vacation-history-header {
+  background: linear-gradient(to bottom, var(--vs-sub-cont-header-start), var(--vs-sub-cont-header-end));
+  color: var(--vs-header-text-color);
+  font-size: 12px;
+  font-weight: 500;
+  border-bottom: 1px solid var(--vs-sub-cont-border-color);
+  padding: 8px;
+  
+}
+
+.add-vacation-scheduler-body {
+  font-size: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--vs-sub-cont-body-bg-color);
+  padding: 16px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.add-vacation-scheduler-body-first {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 10px;
+}
+.add-vacation-scheduler-date-inputs{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.add-vacation-scheduler-date-inputs-from-label,.add-vacation-scheduler-date-inputs-to-label {
+  color: var(--vs-date-inputs-text-color);
+  font-size: 12px;
+}
+
+.add-vacation-scheduler-date-inputs-input {
+  cursor: pointer;
+  width: 14vw !important ;
+  min-width: 120px;
+  height: 30px;
+  font-size: 12px;
+  margin: 0 8px;
+  border: 1px inset var(--vs-input-border-color);
+  background-color: var(--white);
+  background-color: var(--white)!important;
+  color: var(--active-menu) !important;
+  -webkit-text-fill-color: var(--active-menu);
+}
+
+.add-vacation-scheduler-date-inputs input::-webkit-calendar-picker-indicator {
+  filter: invert(0); 
+  background-color: var(--white);
+}
+.add-vacation-scheduler-date-inputs input::-moz-calendar-picker-indicator {
+  filter: invert(0); 
+  background-color: var(--white);
+}
+/*.region-group +*/ .region-group {
+  margin-top: 14px;  /* only applies to every region-group that follows another */
+  padding-top: 10px; 
+  border-top: 2px solid var(--vs-sub-cont-border-color) ;
+
+}
+.select-deselect span {
+  color: var(--vs-select-deselect-color);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.select-deselect span:hover {
+  text-decoration: underline;
+}
+
+.add-vacation-scheduler-checkboxes {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-top: 7px !important;
+}
+.add-vacation-scheduler-each-checkboxe-container {
+  display: flex;
+  /* align-items: center; */
+  width: 220px !important;
+}
+.vacation-scheduler-buttons {
+  gap: 15px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin: 15px 0;
+}
+
+.vacation-scheduler-buttons button {
+  padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+  cursor: pointer;
+}
+
+/* Save button */
+.vacation-scheduler-save-button {
+  background-color: var(--buttonColor);
+  background: linear-gradient(to bottom,rgb(93, 182, 209),var(--buttonColor));
+    border: 1px solid var(--buttonColor);
+    color: var(--white);
+}
+
+ .vacation-scheduler-save-button:hover {
+  background-color: var(--button-hover);
+  /*transform: scale(1.15);
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3), 
+                0px -3px 5px rgba(255, 255, 255, 0.3);*/
+} 
+
+/* Clear button */
+.vacation-scheduler-clear-button {
+  background: linear-gradient(to bottom,var(--white),var(--vs-btn-clear-end));
+  /*background-color: var(--vs-clear-btn);*/
+  color: var(--vs-btn-clear-text-color);
+  border: 1px solid var(--vs-btn-clear-border-color);
+  /*box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2), 
+              0px -2px 4px rgba(255, 255, 255, 0.2);*/
+}
+
+.vacation-scheduler-clear-button:hover {
+  
+  /*transform: scale(1.15);
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3), 
+                0px -3px 5px rgba(255, 255, 255, 0.3);*/
+  background: var(--vs-clear-btn-hover) !important;
+  color: var(--active-menu);
+} 
+
+.vacation-history-no-table-text {
+  display: flex;
+  align-items: center;
+  color: var(--vs-date-inputs-text-color);
+  font-size: 12px;
+  text-align: right;
+  padding: 16px;
+}
+
+.vacation-history-table-wrapper {
+  width: 100%;
+    min-height: 70px;
+    max-height: calc(85vh - var(--add-cont-height));
+    max-width: calc(100vw - 550px);
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
+.vacation-history-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.vacation-history-table span{
+  color: var(--vs-select-deselect-color);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.vacation-history-table thead {
+  background-color: var(--vs-table-row-alt-bg-color);
+  color: var(--vs-table-head-text-color);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.vacation-history-table th,
+.vacation-history-table td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid var(--vs-sub-cont-border-color);
+  border-right: 1px solid var(--vs-sub-cont-border-color);
+}
+
+.vacation-history-table th:last-child,
+.vacation-history-table td:last-child {
+  border-right: none;
+}
+
+.vacation-history-table tbody tr {
+  background-color: var(--vs-sub-cont-body-bg-color);
+  min-height: 70px;
+}
+
+.vacation-history-table tbody tr:nth-child(even) {
+  background-color: var(--vs-table-row-alt-bg-color);
+}
+
+.vacation-history-table td {
+  color: var(--vs-table-head-text-color);
+  font-size: 12px;
+}
+
+/* Desktop-specific styles */
+.vacation-history-table th:first-child,
+.vacation-history-table td:first-child {
+  width: 20%;
+}
+
+.vacation-history-table th:nth-child(2),
+.vacation-history-table td:nth-child(2),
+.vacation-history-table th:nth-child(3),
+.vacation-history-table td:nth-child(3) {
+  width: 20%;
+}
+
+.vacation-history-table th:nth-child(4),
+.vacation-history-table td:nth-child(4) {
+  width: 20%;
+}
+
+.vacation-history-table th:last-child,
+.vacation-history-table td:last-child {
+  width: 20%;
+}
+
+@media (max-width:1075px) and (min-width: 768px) {
+  .add-vacation-scheduler-body-first{
+    display: flex;
+    gap: 5px;
+    align-items: start !important;
+    flex-direction: column !important;
+  }
+  .add-vacation-scheduler-date-inputs{
+    gap: 5px;
+    flex-direction: column !important;
+  }
+  .add-vacation-scheduler-from-container,.add-vacation-scheduler-to-container,.add-vacation-scheduler-date-inputs{
+    width: 100% !important;
+  }
+  .add-vacation-scheduler-date-inputs-from-label,.add-vacation-scheduler-date-inputs-to-label{
+    width: 48px;
+  }
+  .add-vacation-scheduler-date-inputs-input {
+    width: calc(100% - 28px) !important;
+  }
+}
+
+/* Mobile-specific styles */
+/*.vacation-scheduler-mobile-main-container{
+  overflow: hidden;
+}*/
+.vacation-scheduler-mobile-top-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 10px;
+  background: linear-gradient(to bottom, var(--vs-sub-cont-header-start), var(--vs-sub-cont-header-end));
+  border: 1px solid #ddd;
+  height: 45px;
+  flex-grow: 1;
+  text-align: center;
+  position:sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.vacation-scheduler-mobile-top-sub-container {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  
+}
+.main-container-vacation-scheduler-mobile {
+  background-color: var(--white);
+  width: 100%;
+  height: 100%;
+  padding: 16px;
+  box-sizing: border-box;
+  overflow-x: auto;
+  overflow-y: auto;
+}
+
+.add-vacation-scheduler-date-inputs-mobile-from-label {
+  color: var(--vs-date-inputs-text-color);
+  font-size: 12px;
+  width: 48px;
+  margin-right: 8px;
+  padding-left: 8px;
+  margin-bottom: 2px;
+}
+.add-vacation-scheduler-date-inputs-mobile-to-label {
+  color: var(--vs-date-inputs-text-color);
+  font-size: 12px;
+  width: 48px;
+  margin-right: 10px;
+  margin-right: 8px;
+  padding-left: 8px;
+}
+
+.add-vacation-scheduler-date-inputs-mobile input {
+  width: calc(100% - 28px);
+  cursor: pointer;
+  font-size: 12px;
+  height: 30px;
+  margin: 0 8px;
+  border: 1px solid var(--vs-input-border-color);
+  background-color: var(--white);
+  background-color: var(--white) !important;
+  color: var(--active-menu) !important;
+  -webkit-text-fill-color: var(--active-menu);
+}
+
+.add-vacation-scheduler-date-inputs-mobile input::-webkit-calendar-picker-indicator {
+  filter: invert(0);
+  background-color: var(--white);
+}
+
+.add-vacation-scheduler-date-inputs-mobile input::-moz-calendar-picker-indicator {
+  filter: invert(0);
+  background-color: var(--white);
+}
+
+.main-container-vacation-scheduler-mobile {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.date-inputs-mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.date-inputs-mobile label {
+  margin: 0 !important;
+}
+.add-vacation-scheduler-body-second-mobile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.region-group-mobile{
+  max-width: 95%;
+  min-width: 95%;
+}
+/* .region-group-mobile+*/.region-group-mobile{ 
+  margin-top: 9px;
+  padding-top: 5px;
+  border-top: 2px solid var(--vs-sub-cont-border-color);
+}
+  .add-vacation-scheduler-each-checkboxe-mobile{
+  /* margin: 5px;  */
+  max-width: max-content !important;
+  min-width: 42vw !important;
+} 
+ .add-vacation-scheduler-checkboxes-mobile-header{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between !important;
+  width: 98%;
+ }
+.add-vacation-scheduler-checkboxes-mobile {
+  max-width: 98%;
+  min-width: 98%;
+  /* max-height: 100px; /* Adjust this value based on your design *//*
+  overflow-y: auto; /*Enables vertical scrolling when content overflows */
+}
+.vacation-history-no-table-text-mobile {
+  justify-content: center;
+  text-align: center;
+}
+
+.vacation-history-table-wrapper-mobile {
+  overflow: auto;
+  max-height: calc(100vh - 95px);
+}
+
+.vacation-history-table-mobile {
+  width: 100%;
+}
+
+.vacation-history-table-mobile th:first-child,
+.vacation-history-table-mobile td:first-child {
+  width: 10%;
+}
+
+.vacation-history-table-mobile th:nth-child(2),
+.vacation-history-table-mobile td:nth-child(2),
+.vacation-history-table-mobile th:nth-child(3),
+.vacation-history-table-mobile td:nth-child(3) {
+  width: 10%;
+}
+
+.vacation-history-table-mobile th:nth-child(4),
+.vacation-history-table-mobile td:nth-child(4) {
+  width: 10%;
+}
+
+.vacation-history-table-mobile th:last-child,
+.vacation-history-table-mobile td:last-child {
+  width: 10%;
+}
+.add-vacation-scheduler-checkboxes-mobile input{
+  border:1px solid var(--active-menu);
+  cursor: pointer;
+}
+.add-vacation-scheduler-checkboxes input{
+  border:1px outset var(--active-menu) !important;
+  cursor: pointer;
+}
